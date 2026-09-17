@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apply Now — Scholarship | Study In Canada 2026/2027</title>
+<meta name="description" content="Free application assistance for 10 Canadian university scholarships. Up to CAD $200,000 in funding. Apply in 2 minutes." />
+<link rel="canonical" href="./form.html" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: { colors: {
+    navy: { 900: "#0a1633", 800: "#0d1f4d", 700: "#10265e" },
+    gold: { 400: "#f3c637", 500: "#e0b520" }
+  }}}
+}
+</script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  .reveal { opacity: 0; transform: translateY(30px); transition: all .7s cubic-bezier(.22,1,.36,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  [data-theme="dark"] body { background: #070d1f; color: #f1f5f9; }
+  select, input { color-scheme: light; }
+  .field-label { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .4rem; display: block; }
+  .field { width: 100%; border-radius: .75rem; border: 1px solid #cbd5e1; padding: .8rem 1rem; outline: none; transition: border-color .2s, box-shadow .2s; font-size: .95rem; background: #fff; }
+  .field:focus { border-color: #f3c637; box-shadow: 0 0 0 3px rgba(243,198,55,.25); }
+  .field.error { border-color: #ef4444; box-shadow: 0 0 0 3px rgba(239,68,68,.15); }
+  .err-msg { display: none; color: #ef4444; font-size: .75rem; margin-top: .3rem; font-weight: 600; }
+  .err-msg.show { display: block; }
+  #successCard { display: none; }
+  #successCard.show { display: block; }
+  .opt-group { font-weight: 800; color: #0d1f4d; }
+</style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+<!-- ============ NAVBAR ============ -->
+<nav class="bg-navy-900 text-white border-b border-white/10">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 font-black text-lg">
+      🎓 <span class="text-gold-400">Canadian</span>Scholarships
+    </a>
+    <a href="index.html" class="text-sm font-semibold text-slate-300 hover:text-gold-400 transition">← Back to universities</a>
+  </div>
+</nav>
+
+<!-- ============ HERO STRIP ============ -->
+<section class="bg-gradient-to-b from-navy-900 to-navy-800 text-white py-12 px-6 text-center">
+  <h1 class="reveal text-3xl sm:text-4xl font-black">Scholarship Application Portal</h1>
+    <p class="reveal text-slate-300 mt-3 max-w-xl mx-auto">
+    Complete this form and our team will match you with the best-funded option.<span class="text-gold-400 font-bold">100% free.</span>
+  </p>
+ 
+</section>
+
+<!-- ============ FORM ============ -->
+<section class="py-12 px-4 sm:px-6">
+  <div class="max-w-2xl mx-auto">
+
+    <!-- Success card (hidden until submit) -->
+    <div id="successCard" class="rounded-3xl bg-white border-2 border-green-400 p-10 text-center shadow-xl">
+      <div class="w-16 h-16 mx-auto rounded-full bg-green-100 flex items-center justify-center">
+        <i data-lucide="check-circle-2" class="w-9 h-9 text-green-600"></i>
+      </div>
+      <h2 class="mt-5 text-2xl font-black">Application Received! 🎉</h2>
+      <p class="mt-3 text-slate-600">Our team is reviewing your details. Expect a message on
+        <span class="font-bold">WhatsApp/Email within 24 hours</span> with your eligibility result and next steps.</p>
+      <p class="mt-4 text-sm text-slate-500">Check your email (and spam folder) — we've sent you a confirmation.</p>
+      <a href="index.html" class="mt-8 inline-block rounded-xl bg-navy-900 px-8 py-3 font-bold text-white hover:bg-navy-800 transition">
+        ← Back to Scholarship site
+      </a>
+    </div>
+
+    <!-- The form -->
+    <form id="applyForm" novalidate class="reveal visible rounded-3xl bg-white border border-slate-200 shadow-lg p-6 sm:p-10 space-y-7">
+
+      <!-- PERSONAL DETAILS -->
+      <div>
+        <h2 class="text-lg font-black text-navy-800 flex items-center gap-2">
+          <i data-lucide="user" class="w-5 h-5 text-gold-500"></i> Personal Details
+        </h2>
+        <div class="mt-4 grid sm:grid-cols-2 gap-5">
+          <div class="sm:col-span-2">
+            <label class="field-label text-navy-800" for="name">Full Name *</label>
+            <input id="name" name="name" type="text" class="field" placeholder="e.g. Mathew llyord" required />
+            <p class="err-msg" data-for="name">Please enter your full name.</p>
+          </div>
+          <div>
+            <label class="field-label text-navy-800" for="email">Valid Email Address *</label>
+            <input id="email" name="email" type="email" class="field" placeholder="you@example.com" required />
+            <p class="err-msg" data-for="email">Enter a valid email (e.g. name@gmail.com).</p>
+          </div>
+          <div>
+            <label class="field-label text-navy-800" for="phone">Phone / WhatsApp Number *</label>
+            <input id="phone" name="phone" type="tel" class="field" placeholder="+1 801 234 5678" required />
+            <p class="err-msg" data-for="phone">Enter a valid phone number (min. 7 digits).</p>
+          </div>
+          <div>
+            <label class="field-label text-navy-800" for="age">Age *</label>
+            <input id="age" name="age" type="number" min="15" max="80" class="field" placeholder="e.g. 21" required />
+            <p class="err-msg" data-for="age">Age must be between 15 and 80.</p>
+          </div>
+          <div>
+            <label class="field-label text-navy-800" for="gender">Gender *</label>
+            <select id="gender" name="gender" class="field" required>
+              <option value="">Select gender</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Prefer not to say</option>
+            </select>
+            <p class="err-msg" data-for="gender">Please select an option.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACADEMIC DETAILS -->
+      <div class="border-t border-slate-200 pt-7">
+        <h2 class="text-lg font-black text-navy-800 flex items-center gap-2">
+          <i data-lucide="graduation-cap" class="w-5 h-5 text-gold-500"></i> Academic & Application Details
+        </h2>
+        <div class="mt-4 grid sm:grid-cols-2 gap-5">
+          <div class="sm:col-span-2">
+            <label class="field-label text-navy-800" for="country">Country of Residence *</label>
+            <select id="country" name="country" class="field" required>
+              <option value="">Select your country</option>
+            </select>
+            <p class="err-msg" data-for="country">Please select your country.</p>
+          </div>
+
+          <div>
+            <label class="field-label text-navy-800" for="level">Study Level *</label>
+            <select id="level" name="level" class="field" required>
+              <option value="">Select level</option>
+              <option value="undergraduate">Undergraduate (Bachelor's)</option>
+              <option value="masters">Master's Degree</option>
+              <option value="phd">PhD / Doctoral</option>
+            </select>
+            <p class="err-msg" data-for="level">Please select your study level.</p>
+          </div>
+
+          <div>
+            <label class="field-label text-navy-800" for="qualification">Current Highest Qualification *</label>
+            <select id="qualification" name="qualification" class="field" required>
+              <option value="">Select your qualification</option>
+              <!-- UNDERGRADUATE GROUP -->
+              <optgroup label="🎓 Undergraduate" id="qualUndergrad">
+                <option>WAEC / NECO / SSCE</option>
+                <option>High School Diploma</option>
+                <option>A-Levels / IB / Foundation</option>
+                <option>OND / National Diploma</option>
+                <option>HND — Higher National Diploma</option>
+                <option>Currently in final year of high school</option>
+              </optgroup>
+              <!-- MASTERS GROUP -->
+              <optgroup label="📚 Postgraduate" id="qualPostgrad">
+                <option>Bachelor's Degree</option>
+                <option>Bachelor's Degree — Final year student</option>
+                <option>PGD — Postgraduate Diploma</option>
+                <option>Master's Degree</option>
+                <option>MPhil</option>
+                <option>PhD (in progress or completed)</option>
+              </optgroup>
+            </select>
+            <p class="err-msg" data-for="qualification">Please select your highest qualification.</p>
+          </div>
+
+          <div>
+            <label class="field-label text-navy-800" for="gpa">GPA / Grade Average *</label>
+            <input id="gpa" name="gpa" type="text" class="field" placeholder="e.g. 3.4/4.0 or 78%" required />
+            <p class="err-msg" data-for="gpa">Enter your GPA or grade average.</p>
+          </div>
+
+          <div>
+            <label class="field-label text-navy-800" for="university">Chosen University *</label>
+            <select id="university" name="university" class="field" required>
+              <option value="">Select a university</option>
+              <option value="Not sure yet — help me choose">Not sure yet — help me choose</option>
+            </select>
+            <p class="err-msg" data-for="university">Please choose a university.</p>
+          </div>
+
+          <div class="sm:col-span-2">
+            <label class="field-label text-navy-800" for="course">Preferred Course *</label>
+            <select id="course" name="course" class="field" required disabled>
+              <option value="">— First choose a university above —</option>
+            </select>
+            <p class="err-msg" data-for="course">Please choose your preferred course.</p>
+          </div>
+
+          <div class="sm:col-span-2">
+            <label class="field-label text-navy-800" for="ielts">Do you have IELTS or an English proficiency result? *</label>
+            <select id="ielts" name="ielts" class="field" required>
+              <option value="">Select one</option>
+              <option>Yes — I have IELTS</option>
+              <option>Yes — TOEFL / Duolingo / other</option>
+              <option>No — but I want a Medium of Instruction letter option</option>
+              <option>No — I plan to take IELTS later</option>
+            </select>
+            <p class="err-msg" data-for="ielts">Please select an option.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DECLARATION -->
+      <div class="border-t border-slate-200 pt-7">
+        <h2 class="text-lg font-black text-navy-800 flex items-center gap-2">
+          <i data-lucide="file-check" class="w-5 h-5 text-gold-500"></i> Declaration
+        </h2>
+        <label for="declaration" class="mt-4 flex items-start gap-3 cursor-pointer rounded-xl bg-slate-50 border border-slate-200 p-4 hover:border-gold-400 transition">
+          <input id="declaration" name="declaration" type="checkbox" required
+            class="mt-1 w-5 h-5 accent-yellow-500 shrink-0" />
+          <span class="text-sm text-slate-700">
+            I declare that the information provided is true and accurate to the best of my knowledge.
+            I understand that Canadian Scholarship provides <span class="font-bold">free application guidance</span> and is not the
+            scholarship provider; final decisions rest with each university. I consent to being contacted
+            via WhatsApp and email regarding my application.
+          </span>
+        </label>
+        <p class="err-msg" data-for="declaration">You must accept the declaration to submit.</p>
+      </div>
+
+      <!-- SUBMIT -->
+      <button id="submitBtn" type="submit"
+        class="w-full rounded-xl bg-gold-400 py-4 font-black text-navy-900 text-lg hover:bg-gold-500 transition disabled:opacity-50 flex items-center justify-center gap-2">
+        <i data-lucide="send" class="w-5 h-5"></i>
+        <span id="submitText">Submit My Application</span>
+      </button>
+      <p id="globalError" class="hidden text-center text-red-500 text-sm font-semibold">Something went wrong. Please try again, or message us on WhatsApp.</p>
+      <p class="text-center text-xs text-slate-400">🔒 Encrypted submission · We never charge applicants any fee</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-navy-900 text-slate-400 py-8 text-center text-sm">
+  <p class="text-white font-bold text-lg">🎓 Canadian Scholarships</p>
+  <p class="mt-2">© 2026 Scholarship · All offers verified against official sources.</p>
+</footer>
+
+<!-- ============ WHATSAPP FLOAT ============ -->
+<a href="https://wa.me/18128023489?text=Hi!%20I%20need%20help%20with%20my%20scholarship%20application"
+   target="_blank" rel="noopener"
+   class="fixed bottom-5 right-5 z-50 rounded-full bg-green-500 p-4 text-white shadow-2xl hover:scale-110 transition">
+  <i data-lucide="message-circle" class="w-7 h-7"></i>
+</a>
+
+<script>
+/* ================================================================
+   CONFIG — paste your Google Apps Script Web App URL here
+================================================================ */
+const LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbwLQhSh4Ubbw2AYEkIKLiaIAAj_HGh_9ohwMc_87qW6hzVXv8Y2L4fFWlXL5fxvtrv2Og/exec";
+
+/* ================================================================
+   COUNTRIES (full list, alphabetical)
+================================================================ */
+const COUNTRIES = ["Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo (Brazzaville)","Congo (Kinshasa)","Costa Rica","Côte d'Ivoire","Croatia","Cuba","Cyprus","Czechia","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Korea","North Macedonia","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino","São Tomé and Príncipe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
+
+const countrySel = document.getElementById("country");
+COUNTRIES.forEach((c) => {
+  const o = document.createElement("option");
+  o.value = c; o.textContent = c;
+  countrySel.appendChild(o);
+});
+
+/* ================================================================
+   UNIVERSITIES + COURSES (kept in sync with index.html)
+   ⬅️ When you edit data on index.html, copy it here too.
+================================================================ */
+const UNI_DATA = {
+  "University of Toronto": ["Engineering","Computer Science","Business (Rotman)","Medicine-track","Law-track","Architecture","Data Science","Arts & Humanities","Social Sciences","Life Sciences"],
+  "University of British Columbia (UBC)": ["Engineering","Computer Science","Commerce (Sauder)","Science","Forestry","Kinesiology","Nursing","Pharmacy","Arts","Education"],
+  "University of Waterloo": ["Software Engineering","Computer Science","Mathematics","Mechanical Engineering","Data Science","Accounting & Finance","Health Sciences","Environment & Business"],
+  "Dalhousie University": ["Engineering","Computer Science","Health Sciences","Ocean Sciences","Agriculture","Business","Law","Environmental Science"],
+  "University of Calgary": ["Engineering","Business (Haskayne)","Nursing","Veterinary Medicine","Kinesiology","Computer Science","Geoscience","Law"],
+  "Lakehead University": ["Engineering","Computer Science","Business","Natural Resources Management","Nursing","Education","Kinesiology","Environmental Science"],
+  "Laurentian University": ["Mining Engineering","Mechanical Engineering","Business","Health Sciences","Architecture","Forestry","Nursing","Computer Science"],
+  "University of Manitoba": ["Agriculture","Biosystems Engineering","Medicine","Computer Science","Food Science","Business (Asper)","Environment","Public Health"],
+  "University of Saskatchewan": ["Agriculture & Bioresources","Veterinary Medicine","Engineering","Computer Science","Pharmacy & Nutrition","Nursing","Business","Toxicology"],
+  "University of Ottawa": ["Engineering","Computer Science","Law (Civil & Common)","Health Sciences","Political Science","International Development","Business (Telfer)","Medicine"]
+};
+
+const uniSel = document.getElementById("university");
+const courseSel = document.getElementById("course");
+
+Object.keys(UNI_DATA).forEach((u) => {
+  const o = document.createElement("option");
+  o.value = u; o.textContent = u;
+  uniSel.appendChild(o);
+});
+
+uniSel.addEventListener("change", () => {
+  courseSel.innerHTML = "";
+  const uni = uniSel.value;
+  if (!uni || uni === "Not sure yet — help me choose") {
+    courseSel.disabled = true;
+    courseSel.innerHTML = uni === "Not sure yet — help me choose"
+      ? '<option value="Not sure yet — help me choose courses too">Not sure yet — help me choose courses too</option>'
+      : '<option value="">— First choose a university above —</option>';
+    if (uni) courseSel.disabled = false;
+    return;
+  }
+  courseSel.disabled = false;
+  courseSel.innerHTML = '<option value="">Select your course</option>';
+  UNI_DATA[uni].forEach((c) => {
+    const o = document.createElement("option");
+    o.value = c; o.textContent = c;
+    courseSel.appendChild(o);
+  });
+});
+
+/* Qualification <-> level smart link: picking level highlights the right group */
+document.getElementById("level").addEventListener("change", function () {
+  const ug = document.getElementById("qualUndergrad");
+  const pg = document.getElementById("qualPostgrad");
+  ug.label = this.value === "undergraduate" ? "🎓 Undergraduate — RECOMMENDED FOR YOU" : "🎓 Undergraduate";
+  pg.label = (this.value === "masters" || this.value === "phd") ? "📚 Postgraduate — RECOMMENDED FOR YOU" : "📚 Postgraduate";
+});
+
+/* ================================================================
+   VALIDATION + SUBMIT
+================================================================ */
+const form = document.getElementById("applyForm");
+
+function setError(id, on) {
+  document.getElementById(id).classList.toggle("error", on);
+  const msg = document.querySelector(`.err-msg[data-for="${id}"]`);
+  if (msg) msg.classList.toggle("show", on);
+  return !on;
+}
+
+function validate() {
+  let ok = true;
+  const v = (id) => document.getElementById(id).value.trim();
+
+  ok = setError("name", v("name").length < 3) && ok;
+  ok = setError("email", !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v("email"))) && ok;
+  ok = setError("phone", v("phone").replace(/\D/g, "").length < 7) && ok;
+  ok = setError("age", !(+v("age") >= 15 && +v("age") <= 80)) && ok;
+  ok = setError("gender", !v("gender")) && ok;
+  ok = setError("country", !v("country")) && ok;
+  ok = setError("level", !v("level")) && ok;
+  ok = setError("qualification", !v("qualification")) && ok;
+  ok = setError("gpa", !v("gpa")) && ok;
+  ok = setError("university", !v("university")) && ok;
+  ok = setError("course", !v("course")) && ok;
+  ok = setError("ielts", !v("ielts")) && ok;
+  ok = setError("declaration", !document.getElementById("declaration").checked) && ok;
+  return ok;
+}
+
+// live re-validation once a field has been flagged
+form.querySelectorAll(".field").forEach((f) => {
+  f.addEventListener("input", () => { if (f.classList.contains("error")) validate(); });
+  f.addEventListener("change", () => { if (f.classList.contains("error")) validate(); });
+});
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if (!validate()) {
+    document.querySelector(".field.error")?.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+
+  const btn = document.getElementById("submitBtn");
+  const btnText = document.getElementById("submitText");
+  btn.disabled = true;
+  btnText.textContent = "Submitting...";
+
+  const data = Object.fromEntries(new FormData(form).entries());
+  data.declaration = "Accepted";
+  data.submittedAt = new Date().toISOString();
+  data.page = location.href;
+
+  try {
+    if (LEAD_ENDPOINT.startsWith("https://")) {
+      await fetch(LEAD_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" }, // avoids Google CORS preflight
+        body: JSON.stringify(data),
+      });
+    } else {
+      await new Promise((r) => setTimeout(r, 900)); // test mode — logs to console
+      console.log("Application captured (add LEAD_ENDPOINT to save to Google Sheets):", data);
+      alert("TEST MODE: form is valid! Add your Google Apps Script URL to receive real submissions.");
+    }
+    form.style.display = "none";
+    document.getElementById("successCard").classList.add("show");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } catch (err) {
+    document.getElementById("globalError").classList.remove("hidden");
+    btn.disabled = false;
+    btnText.textContent = "Submit My Application — Free";
+  }
+});
+
+/* Scroll reveal + icons */
+const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+lucide.createIcons();
+</script>
+
+</body>
+</html>
